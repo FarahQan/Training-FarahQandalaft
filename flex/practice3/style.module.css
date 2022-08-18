@@ -232,6 +232,8 @@ body::-webkit-scrollbar-thumb {
   .show-side {
     height: 38vh;
     border-radius: 0 0 10px 10px;
+    height: 38vh;
+    border-radius: 0 0 10px 10px;
   }
   .hide-side {
     animation: hideSide 1s ease;
@@ -248,5 +250,11 @@ body::-webkit-scrollbar-thumb {
   #sidebar-btn {
     font-size: x-large;
     margin: 0;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  body {
+    zoom: 1;
   }
 }
