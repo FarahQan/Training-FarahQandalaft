@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url("https://assets.kplus.com.tr/themes/travelerb2b/img/backgrounds/default-k.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 70vw 16vw;
+  grid-template-rows: 10vh minmax(100vh, auto) 10vh;
+  grid-template-areas: "head head head" "main main side" "footer footer footer";
+  cursor: default;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  animation: items-show 2s ease;
+}
+
+@keyframes items-show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.header {
+  grid-area: head;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  color: white;
+}
+
+.search {
+  height: 50%;
+  width: 60%;
+  border-radius: 10px;
+  border-style: none;
+  padding: 10px;
+  margin: auto;
+  font-size: large;
+}
+
+.show-side {
+  grid-area: side;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 28vh;
+  transition: all 0.2s ease;
+  animation: showSide 0.4s ease;
+  border-radius: 0 0 0 10px;
+}
+
+@keyframes showSide {
+  0% {
+    transform: translateX(17vw);
+  }
+}
+
+.hide-side {
+  animation: hideSide 1s ease;
+  display: none;
+}
+
+@keyframes hideSide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(17vw);
+  }
+}
+
+.nav {
+  margin-top: 2vh;
+}
+ul {
+  list-style: none;
+}
+.navList {
+  width: 100%;
+}
+
+.navList li {
+  border-bottom: 2px solid rgba(128, 128, 128, 0.5);
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  font-size: large;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.navList li:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.navList li:last-child {
+  border-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.main {
+  grid-area: main;
+  padding: 15px 0;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+  gap: 15px 0;
+  width: 100vw;
+}
+
+body::-webkit-scrollbar {
+  width: 15px;
+  height: 100%;
+}
+body::-webkit-scrollbar-button {
+  display: none;
+}
+body::-webkit-scrollbar-track {
+  background-color: rgba(128, 128, 128, 0.473);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+.main article {
+  box-shadow: 0 2px 5px;
+  height: 600px;
+  margin: 0 1vw;
+  width: 37vw;
+  background-image: linear-gradient(to bottom, rgb(104, 104, 104), black);
+  padding: 10px;
+  padding-bottom: 0px;
+  border-radius: 10px;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+.main article img {
+  object-fit: fill;
+  height: 70%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.main article:nth-child(even) {
+  animation: items-right 4s ease;
+}
+
+@keyframes items-right {
+  0% {
+    transform: translateX(1000px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.main article:nth-child(odd) {
+  animation: items-left 4s ease;
+}
+
+@keyframes items-left {
+  0% {
+    transform: translateX(-1000px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.footer {
+  grid-area: footer;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  color: white;
+}
+
+.footerList {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: large;
+  margin-right: 15px;
+}
+
+#sidebar-btn {
+  width: 50px;
+  height: 50px;
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: transparent;
+  color: white;
+  border-style: none;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    grid-template-columns: 100vw;
+    grid-template-rows: 10vh auto minmax(100vh, auto) 10vh;
+    grid-template-areas: "head" "side" "main" "footer";
+  }
+  .main {
+    grid-area: side main;
+    grid-template-columns: repeat(1, auto);
+  }
+  .main article {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .show-side {
+    height: 38vh;
+    border-radius: 0 0 10px 10px;
+  }
+  .hide-side {
+    animation: hideSide 1s ease;
+    display: none;
+  }
+  @keyframes showSide {
+    0% {
+      transform: translateY(-17vw);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  #sidebar-btn {
+    font-size: x-large;
+    margin: 0;
+  }
+}
