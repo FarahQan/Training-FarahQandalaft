@@ -1,0 +1,13 @@
+.flex-div-wrapper {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  flex-wrap: wrap;
+  border: 2px solid firebrick;
+}
+
+.flex-div-wrapper div {
+  flex-grow: 1;
+  background-color: royalblue;
+  width: 100px;
+}
