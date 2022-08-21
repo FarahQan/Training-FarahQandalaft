@@ -24,3 +24,9 @@ div {
   width: 90px;
   height: 40px;
 }
+div:nth-child(1) {
+  order: 1;
+}
+div:nth-child(2) {
+  order: 1;
+}

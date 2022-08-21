@@ -221,6 +221,7 @@ body::-webkit-scrollbar-thumb {
     grid-template-rows: 10vh auto minmax(100vh, auto) 10vh;
     grid-template-areas: "head" "side" "main" "footer";
   }
+
   .main {
     grid-area: side main;
     grid-template-columns: repeat(1, auto);
