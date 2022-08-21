@@ -128,13 +128,18 @@ ul {
 
   .main-wrapper {
     flex-direction: column-reverse;
+    flex: 80%;
   }
   .post-wrapper {
     flex-direction: row;
     margin-left: 10px;
     margin-right: 10px;
+    min-height: 140vh;
   }
-
+  .sidebar-wrapper {
+    flex: 2% 0;
+    padding: 15px;
+  }
   .sidebar-list {
     flex-direction: row;
   }
