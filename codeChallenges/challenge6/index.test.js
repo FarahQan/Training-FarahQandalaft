@@ -5,6 +5,8 @@
  * a prime number, false if it's not.
  */
 const primeTester = function (n) {
+  if (n === 1) return "not prime nor composite";
+  if (n === 0) return false;
   if (n < 0) {
     n = n * -1;
   }
@@ -15,7 +17,6 @@ const primeTester = function (n) {
   }
   return true;
 };
-
 // complexity O(n)
 
 describe("PrimeTesting", () => {
