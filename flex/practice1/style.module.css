@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+}
+
+.container {
+  background-color: steelblue;
+  width: 400px;
+  height: 100px;
+  margin: auto;
+  display: flex;
+  gap: 2px;
+  align-content: space-around;
+  flex-wrap: wrap;
+}
+
+div {
+  background-color: lightblue;
+  width: 90px;
+  height: 40px;
+}
+div:nth-child(1) {
+  order: 1;
+}
+div:nth-child(2) {
+  order: 1;
+}

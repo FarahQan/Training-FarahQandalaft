@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url("https://media.cntraveler.com/photos/5eb18e42fc043ed5d9779733/master/pass/BlackForest-Germany-GettyImages-147180370.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header-wrapper {
+  background-color: rgba(0, 0, 0, 0.8);
+  flex: 10%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+}
+
+.nav-list li {
+  padding: 15px;
+  border-bottom: 2px solid rgba(179, 179, 0, 0.932);
+}
+
+.nav-list li a {
+  color: white;
+}
+
+.nav-list a,
+.footer-list a,
+.sidebar-list a {
+  text-decoration: none;
+  color: black;
+  margin: auto;
+}
+
+.main-wrapper {
+  flex: 80%;
+  display: flex;
+}
+
+.post-wrapper {
+  flex: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px auto;
+}
+
+.post-wrapper article {
+  background-color: rgba(179, 179, 0, 0.932);
+  border-radius: 8px;
+  box-shadow: 0 1px 9px rgba(88, 88, 88, 0.966);
+  word-break: break-all;
+  min-width: 350px;
+  min-height: 250px;
+  max-height: 500px;
+  padding: 10px;
+  margin: 10px auto;
+}
+
+.sidebar-wrapper {
+  flex: 15%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+  justify-content: center;
+}
+.sidebar-list li {
+  border: 1px solid;
+  background-color: rgba(179, 179, 0, 0.932);
+  width: 80%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.footer-wrapper {
+  color: white;
+  flex: 10%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+.footer-list {
+  display: flex;
+}
+
+.footer-list li a {
+  padding: 15px;
+  color: white;
+}
+
+@media screen and (max-width: 1100px) {
+  body {
+    zoom: 65%;
+  }
+
+  .main-wrapper {
+    flex-direction: column-reverse;
+    flex: 80%;
+  }
+  .post-wrapper {
+    flex-direction: row;
+    margin-left: 10px;
+    margin-right: 10px;
+    min-height: 140vh;
+  }
+  .sidebar-wrapper {
+    flex: 2% 0;
+    padding: 15px;
+  }
+  .sidebar-list {
+    flex-direction: row;
+  }
+}
