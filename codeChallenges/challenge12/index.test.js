@@ -16,3 +16,5 @@ const secondMax = function (array) {
   maxNumber = Math.max(...arr);
   return maxNumber;
 };
+
+// complexity is O(n)
