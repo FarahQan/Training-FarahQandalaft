@@ -23,33 +23,38 @@ Make the method work for arrays that contain objects and/or arrays as elements.
 */
 // eslint-disable-next-line no-extend-native
 Array.prototype.isSubsetOf = function (target) {
-  const uniqueArray = [...new Set(this)];
   let result = false;
   const obj = {};
+
   for (let i = 0; i < target.length; i++) {
-    if (!obj[target[i]]) {
-      if (typeof target[i] !== "object") {
+    if (typeof target[i] !== "object") {
+      if (!obj[target[i]]) {
         obj[target[i]] = target[i];
+      }
+    } else {
+      if (!obj[JSON.stringify(target[i])]) {
+        obj[JSON.stringify(target[i])] = target[i];
       }
     }
   }
 
-  for (let i = 0; i < uniqueArray.length; i++) {
-    if (obj[uniqueArray[i]]) {
-      result = true;
+  for (let i = 0; i < this.length; i++) {
+    if (typeof this[i] !== "object") {
+      if (!obj[this[i]]) {
+        return false;
+      } else {
+        result = true;
+      }
     } else {
-      return false;
+      if (!obj[JSON.stringify(this[i])]) {
+        return false;
+      } else {
+        result = true;
+      }
     }
   }
 
   return result;
 };
 
-// const a = ["commit", "push"];
-// console.log(a.isSubsetOf(["rebase", "push", "blame"]));
 
-// const b = ["merge", "reset", "reset"];
-// console.log(b.isSubsetOf(["reset", "merge", "add", "commit"]));
-
-const c = [{ name: "f", age: 24 }, "reset", "reset"];
-console.log(c.isSubsetOf(["reset", "merge", { name: "f", age: 24 }, "commit"]));
