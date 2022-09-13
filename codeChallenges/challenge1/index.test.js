@@ -36,5 +36,8 @@ const getUniqueValues = (arrOfNum) => {
   }
   return arrayOfUniques;
 };
-// this solution is O(n)
-console.log(getUniqueValues(arrOfNum)); // [1, 2, 4, 5, 6]
+describe("Tests", () => {
+  it("test factorial", () => {
+    expect(getUniqueValues(arrOfNum)).toEqual([1, 2, 4, 5, 6]);
+  });
+});
